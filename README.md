@@ -1,6 +1,6 @@
 # 商品推荐系统网页
 
-![picture](https://github.com/HHHLLL1/ProductRecommendationPage/blob/master/图片首页.png)
+![picture](https://github.com/HHHLLL1/ProductRecommendationPage/blob/master/picture.png)
 
 ## 运行环境：
     python 3.6

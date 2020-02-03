@@ -1,0 +1,59 @@
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}详情页{% endblock %}
+{% block css %}
+    <link href="{% static 'css/login.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+    <div class="col-md-4 col-md-offset-4">
+        <hr>
+        <img src="{% static item_detail.pic_file %}" alt="{{ item_detail.title }}">
+        <hr>
+        <div style="word-break: break-all; width: 200px">
+             <strong class="figure_title">
+                <p align="left">
+                    {{ item_detail.title }}
+                </p>
+{#                 {% if request.session.is_login %}#}
+{#                       <a _boss="item" onclick="add_impression({{ request.session.user_name }}, '{{ item_detail.item_id }}', 1#}
+{#                                     , '{{ item_detail.item_id }}',#}
+{#                                     '{{ csrf_token }}')" title="{{ item_detail.title }}">#}
+{#                             <p align="left">#}
+{#                             {{ item_detail.title }}#}
+{#                             </p>#}
+{#                         </a>#}
+{#                 {% else %}#}
+{#                         <a _boss="item" href="/login/" title="{{ item_detail.title }}">#}
+{#                             <p align="left">#}
+{#                             {{ item_detail.title }}#}
+{#                             </p>#}
+{#                         </a>#}
+{#                 {% endif %}#}
+             </strong>
+        </div>
+        <div style="width: 400px" align="left">price:<text style="color: orangered">&nbsp;&nbsp;{{ item_detail.price }}</text></div>
+                    <div style="width: 200px" align="right">
+                            {% if request.session.is_login %}
+                                    <button class="btn" onclick="add_impression({{ request.session.user_name }}, '{{ item_detail.item_id }}', 2
+                                            , '{{ item_detail.item_id }}',
+                                            '{{ csrf_token }}')">收藏</button>
+                                    <button class="btn" onclick="add_impression({{ request.session.user_name }}, '{{ item_detail.item_id }}', 3
+                                            , '{{ item_detail.item_id }}',
+                                            '{{ csrf_token }}')">购买</button>
+                            {% else %}
+                                    <button class="btn" onclick="window.location.href='/login/'" >收藏</button>
+                                    <button class="btn" onclick="window.location.href='/login/'" >购买</button>
+                            {% endif %}
+                    </div>
+
+    </div>
+
+    </div> <!-- /container -->
+{% endblock %}
+
+

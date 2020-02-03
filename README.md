@@ -1,4 +1,7 @@
 # 商品推荐系统网页
+
+![picture]https://github.com/HHHLLL1/ProductRecommendationPage/edit/master/图片首页.png
+
 ## 运行环境：
     python 3.6
     django
